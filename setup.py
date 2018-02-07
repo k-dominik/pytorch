@@ -560,6 +560,8 @@ def make_relative_rpath(path):
 extensions = []
 packages = find_packages(exclude=('tools', 'tools.*',))
 
+extra_compile_args += ['-D_GLIBCXX_USE_CXX11_ABI=0']
+
 C = Extension("torch._C",
               libraries=main_libraries,
               sources=main_sources,
